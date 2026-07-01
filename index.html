@@ -74,14 +74,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center gap-3">
-                    <!-- SUBSTITUA O CONTEÚDO ABAIXO PELO SEU LOGO SE PREFERIR UMA IMAGEM LOCAL OU LINK:
-                         Exemplo com imagem:
-                         <img src="caminho_para_sua_imagem/logo_empresa.png" alt="Logo Empresa" class="h-10 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('placeholder-logo').style.display='flex';">
-                         
-                         Por padrão, deixamos o container vetorizado elegante do XMA.IA que se adapta às cores.
-                    -->
-                    <div id="Logo.png" class="bg-gradient-to-br from-[#05b9f9] to-[#4B227A] text-white p-2 rounded-lg font-bold tracking-wider text-xl flex items-center justify-center h-10 w-10 shadow-lg shadow-[#05b9f9]/20">
-                        X
+                    <!-- LOGO DA EMPRESA: Chama "Logo.png" localmente com sistema de fallback contra quebra de imagem -->
+                    <div class="relative h-10 flex items-center justify-center">
+                        <img src="Logo.png" alt="Logo Empresa" class="h-10 w-auto object-contain transition-all duration-300" onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='flex';">
+                        <div id="fallback-logo" class="hidden bg-gradient-to-br from-[#05b9f9] to-[#4B227A] text-white p-2 rounded-lg font-bold tracking-wider text-xl items-center justify-center h-10 w-10 shadow-lg shadow-[#05b9f9]/20">
+                            L
+                        </div>
                     </div>
                     <div>
                         <h1 class="text-lg font-semibold tracking-tight text-white leading-none">XMA.IA</h1>
@@ -462,13 +460,13 @@
             }
         ];
 
-        // Custom Cyber-Neon palette matching requested color schemes
+        // Custom Saturated Cyber-Neon palette to uniquely identify and highlight each company
         const companyMeta = {
-            "M. Dias Branco": { color: "#05b9f9", colorAlpha: "rgba(5, 185, 249, 0.2)" }, // Electric Cyan
-            "Moura": { color: "#a78bfa", colorAlpha: "rgba(167, 139, 250, 0.2)" }, // Vibrant Light Purple
-            "Stellantis": { color: "#f472b6", colorAlpha: "rgba(244, 114, 182, 0.2)" }, // Rose Accent
-            "Vivix": { color: "#60a5fa", colorAlpha: "rgba(96, 165, 251, 0.2)" }, // Blue Accent
-            "Brose": { color: "#4B227A", colorAlpha: "rgba(75, 34, 122, 0.3)" } // Deep Corporate Purple
+            "M. Dias Branco": { color: "#00f0ff", colorAlpha: "rgba(0, 240, 255, 0.15)" },  // Saturated Electric Cyan
+            "Moura": { color: "#bd5cfa", colorAlpha: "rgba(189, 92, 250, 0.15)" },         // Deep Vibrant Royal Purple
+            "Stellantis": { color: "#ff2a85", colorAlpha: "rgba(255, 42, 133, 0.15)" },     // Electric Rose/Pink
+            "Vivix": { color: "#00e676", colorAlpha: "rgba(0, 230, 118, 0.15)" },          // Neon Mint/Green
+            "Brose": { color: "#ff9100", colorAlpha: "rgba(255, 145, 0, 0.15)" }           // Saturated Coral Orange/Amber
         };
 
         let activeCompanies = ["M. Dias Branco", "Moura", "Stellantis", "Vivix", "Brose"];
